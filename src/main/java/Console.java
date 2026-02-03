@@ -2,28 +2,25 @@ import java.util.Scanner;
 
 public class Console {
     private static final Scanner scanner = new Scanner(System.in);
+
     public static void greet(String greeting){
         System.out.println(greeting);
-        for (int i = 0; i < greeting.length(); i++){
-            System.out.print("*");
-        }
+        System.out.print(starsUnder(greeting));
         System.out.println();
     }
 
+    public static String starsUnder(String text){
+        return "*".repeat(text.length());
+    }
+
     public static double readNumber(String prompt, double min, double max) {
-        String input;
-        double value;
         while (true) {
             System.out.print(prompt + ": ");
-            input = scanner.nextLine();
-            if (input.matches("[+-]?\\d*\\.?\\d+")) {
-                value = Double.parseDouble(input);
-                if (value >= min && value <= max) {
-                    break;
-                }
+            String input = scanner.nextLine();
+            if (InputValidator.isValidNumber(input, min, max)) {
+                return Double.parseDouble(input);
             }
             System.out.println("Enter a value from " + min + " to " + max);
         }
-        return value;
     }
 }
