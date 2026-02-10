@@ -6,8 +6,6 @@ public class BmiReport {
     }
 
     public void PrintBMI() {
-        String bmi = calculator.getBmi();
-        System.out.println();
         System.out.println("*********************** YOUR INFORMATION ****************************");
         System.out.println("Height: " + calculator.getHeight() + " inches");
         System.out.println("Weight: " + calculator.getWeight() + " pounds");
