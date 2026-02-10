@@ -1,17 +1,37 @@
 public class BmiCalculator {
+    short IMPERIAL_CONVERSION_FACTOR = 703;
     private final float weight;
     private final float height;
 
+
+    public float getWeight() {
+        return weight;
+    }
+
+    public float getHeight() {
+        return height;
+    }
 
     public BmiCalculator(float weight, float height) {
         this.weight = weight;
         this.height = height;
     }
 
-    public String calculateBMI() {
-        short IMPERIAL_CONVERSION_FACTOR = 703;
+    public String getBmi() {
         float BMI = IMPERIAL_CONVERSION_FACTOR * weight / (height * height);
         return String.format("%.1f", BMI);
+    }
+
+    public String calculateLowWeight(){
+        float LOW_BMI = 18.5F;
+        float lowWeight = LOW_BMI * (height * height) / IMPERIAL_CONVERSION_FACTOR;
+        return String.format("%.0f", lowWeight);
+    }
+
+    public String calculateHighWeight(){
+        float HIGH_BMI = 24.9F;
+        float highWeight = HIGH_BMI * (height * height) / IMPERIAL_CONVERSION_FACTOR;
+        return String.format("%.0f", highWeight);
     }
 
     public String calculateWaistMen(){
