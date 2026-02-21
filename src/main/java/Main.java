@@ -8,5 +8,6 @@ public class Main {
         var report = new BmiReport(calculator);
 
         report.PrintBMI();
+
     }
 }

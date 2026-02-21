@@ -12,8 +12,10 @@ public class BmiReport {
         System.out.println("Body Mass Index: " + calculator.getBmi());
         System.out.println("Based on your height, your weight should be between " +
                 calculator.calculateLowWeight() + " and " + calculator.calculateHighWeight() + " pounds.");
-        System.out.println("The ideal waist size for a woman of that height is " + calculator.calculateWaistWomen());
-        System.out.println("The ideal waist size for a man of that height is " + calculator.calculateWaistMen());
+        System.out.println("The ideal waist size for a woman of that height is "
+                + calculator.calculateWaistWomen() + " inches.");
+        System.out.println("The ideal waist size for a man of that height is "
+                + calculator.calculateWaistMen() + " inches.");
         System.out.println("*********************************************************************");
         System.out.println();
         System.out.println("BMI Categories for Adults");
